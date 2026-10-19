@@ -1,9 +1,71 @@
 [gd_scene format=3 uid="uid://bdihjua88vqfs"]
 
-[node name="Control" type="Control" unique_id=321524383]
+[ext_resource type="Script" uid="uid://du8am0l3ja1of" path="res://Scripts/main.gd" id="1_idj7w"]
+[ext_resource type="PackedScene" uid="uid://s17ujet3gkyr" path="res://Scenes/nav_button.tscn" id="2_kln2b"]
+
+[node name="Control" type="Control" unique_id=321524383 node_paths=PackedStringArray("camera")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_idj7w")
+camera = NodePath("Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=163684619]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1556438927]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=621287375]
+layout_mode = 2
+text = "scrimble...."
+horizontal_alignment = 1
+
+[node name="Marker2D" type="Marker2D" parent="VBoxContainer" unique_id=160870043]
+position = Vector2(576, 324)
+
+[node name="Button" parent="VBoxContainer" unique_id=629655502 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
+layout_mode = 2
+destination = NodePath("../../VBoxContainer2/Marker2D")
+control = NodePath("../..")
+button_text = "go plimbo"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1043128280]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = 324.0
+offset_right = -576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer2" unique_id=890125946]
+layout_mode = 2
+text = "plimbo"
+horizontal_alignment = 1
+
+[node name="Marker2D" type="Marker2D" parent="VBoxContainer2" unique_id=1527155491]
+position = Vector2(576, 324)
+
+[node name="Control" parent="VBoxContainer2" unique_id=484371402 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
+layout_mode = 2
+destination = NodePath("../../VBoxContainer/Marker2D")
+control = NodePath("../..")
+button_text = "go back to scrimble!!!"
