@@ -1,15 +1,14 @@
+Label
+CanvasLayer
 ProgressBar
 AnimatedSprite2D
 ColorRect
-CanvasLayer
 VSeparator
 HBoxContainer
 TextureRect
 Sprite2D
 Marker2D
-Label
 VBoxContainer
 MarginContainer
 Button
 Control
-Camera2D

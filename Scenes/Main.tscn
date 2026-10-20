@@ -70,7 +70,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Control" type="Control" unique_id=321524383 node_paths=PackedStringArray("camera", "loading_screen", "portrait_rect", "hand_rect", "portrait_screen", "processing_bar")]
+[node name="Control" type="Control" unique_id=321524383 node_paths=PackedStringArray("camera", "loading_screen", "portrait_rect", "hand_rect", "portrait_screen", "processing_bar", "quota_tracker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -88,6 +88,8 @@ face_passing_chance = 0.2
 hand_passing_chance = 0.1
 portrait_screen = NodePath("Page2/Marker2D")
 processing_bar = NodePath("Page5/VBoxContainer/ProgressBar")
+quota = 10
+quota_tracker = NodePath("UILayer/Label")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=163684619]
 
@@ -312,3 +314,12 @@ show_percentage = false
 
 [node name="Marker2D" type="Marker2D" parent="Page5" unique_id=296245340]
 position = Vector2(576, 325)
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=664292137]
+
+[node name="Label" type="Label" parent="UILayer" unique_id=915795369]
+offset_left = 19.0
+offset_top = 16.0
+offset_right = 59.0
+offset_bottom = 39.0
+text = "Subjects processed: x/x"

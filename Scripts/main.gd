@@ -9,6 +9,7 @@ const AI_BONUS = 10
 const HUMAN_PUNISHMENT = 40
 const AI_PUNISHMENT = 30
 const NEW_SUBJECT_WAIT = 7.0
+const TRACKER_TEXT = "Subjects Processed: "
 
 @export var camera: Camera2D
 @export var loading_screen: CanvasLayer
@@ -19,6 +20,8 @@ const NEW_SUBJECT_WAIT = 7.0
 @export var hand_passing_chance: float
 @export var portrait_screen: Marker2D
 @export var processing_bar: ProgressBar
+@export var quota: int
+@export var quota_tracker: Label
 
 var ai_hands: Array = []
 var human_hands: Array = []
@@ -26,6 +29,7 @@ var ai_portraits: Array = []
 var human_portraits: Array = []
 var is_subject_ai: bool
 var score: int = 0
+var subjects_processed: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,6 +38,8 @@ func _ready() -> void:
 	human_hands = Array(ResourceLoader.list_directory(HUMAN_HANDS_FOLDER))
 	ai_portraits = Array(ResourceLoader.list_directory(AI_PORTRAITS_FOLDER))
 	human_portraits = Array(ResourceLoader.list_directory(HUMAN_PORTRAITS_FOLDER))
+	# Updates UI:
+	quota_tracker.text = TRACKER_TEXT + str(subjects_processed) + "/" + str(quota)
 	# Generates a subject
 	generate_subject()
 	pass # Replace with function body.
@@ -105,5 +111,8 @@ func process_subject(chose_ai: bool):
 	# Wait a bit (sounds will be added)
 	await get_tree().create_timer(NEW_SUBJECT_WAIT).timeout
 	# Make a new subject and returns the player to the portrait screen
+	subjects_processed += 1
+	# Update UI
+	quota_tracker.text = TRACKER_TEXT + str(subjects_processed) + "/" + str(quota)
 	generate_subject()
 	move_camera(portrait_screen, 0.0)
