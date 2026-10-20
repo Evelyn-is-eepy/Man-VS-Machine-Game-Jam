@@ -2,8 +2,75 @@
 
 [ext_resource type="Script" uid="uid://du8am0l3ja1of" path="res://Scripts/main.gd" id="1_idj7w"]
 [ext_resource type="PackedScene" uid="uid://s17ujet3gkyr" path="res://Scenes/nav_button.tscn" id="2_kln2b"]
+[ext_resource type="Texture2D" uid="uid://bwok3ucdm8nfo" path="res://Assets/Sprites/Portraits/Human/human_1.png" id="3_rgh2o"]
+[ext_resource type="Texture2D" uid="uid://ckib1w2jdyibk" path="res://Assets/Sprites/Hands/Human/human_H_1.png" id="4_pbw6q"]
+[ext_resource type="Texture2D" uid="uid://bw6jsu2028ps4" path="res://Assets/Sprites/New Piskel (1).png" id="5_pbw6q"]
 
-[node name="Control" type="Control" unique_id=321524383 node_paths=PackedStringArray("camera")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1gob"]
+atlas = ExtResource("5_pbw6q")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw32o"]
+atlas = ExtResource("5_pbw6q")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50glp"]
+atlas = ExtResource("5_pbw6q")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy5pj"]
+atlas = ExtResource("5_pbw6q")
+region = Rect2(0, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmxlf"]
+atlas = ExtResource("5_pbw6q")
+region = Rect2(100, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kpch"]
+atlas = ExtResource("5_pbw6q")
+region = Rect2(200, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grg3l"]
+atlas = ExtResource("5_pbw6q")
+region = Rect2(0, 200, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frkhe"]
+atlas = ExtResource("5_pbw6q")
+region = Rect2(100, 200, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1p5hy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1gob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw32o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50glp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy5pj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmxlf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kpch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grg3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frkhe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Control" type="Control" unique_id=321524383 node_paths=PackedStringArray("camera", "loading_screen", "portrait_rect", "hand_rect", "portrait_screen", "processing_bar")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,59 +80,235 @@ grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_idj7w")
 camera = NodePath("Camera2D")
+loading_screen = NodePath("Camera2D/CanvasLayer")
+portrait_rect = NodePath("Page2/VBoxContainer/TextureRect")
+hand_rect = NodePath("Page3/VBoxContainer/TextureRect")
+ai_chance = 0.2
+face_passing_chance = 0.2
+hand_passing_chance = 0.1
+portrait_screen = NodePath("Page2/Marker2D")
+processing_bar = NodePath("Page5/VBoxContainer/ProgressBar")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=163684619]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1556438927]
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=1973993511]
+visible = false
+offset = Vector2(576, 324)
+transform = Transform2D(1, 0, 0, 1, 576, 324)
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer" unique_id=264368468]
+offset_left = -670.0
+offset_top = -380.0
+offset_right = 631.0
+offset_bottom = 418.0
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D/CanvasLayer" unique_id=1432970462]
+sprite_frames = SubResource("SpriteFrames_1p5hy")
+autoplay = "default"
+frame_progress = 0.83917195
+
+[node name="Page1" type="HBoxContainer" parent="." unique_id=323761919]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -576.0
-offset_bottom = -324.0
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 0.2960205
+offset_bottom = 0.29599
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=621287375]
+[node name="VBoxContainer" type="VBoxContainer" parent="Page1" unique_id=2108608652]
 layout_mode = 2
-text = "scrimble...."
-horizontal_alignment = 1
+alignment = 1
 
-[node name="Marker2D" type="Marker2D" parent="VBoxContainer" unique_id=160870043]
-position = Vector2(576, 324)
-
-[node name="Button" parent="VBoxContainer" unique_id=629655502 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
+[node name="Label" type="Label" parent="Page1/VBoxContainer" unique_id=231439802]
 layout_mode = 2
-destination = NodePath("../../VBoxContainer2/Marker2D")
-control = NodePath("../..")
-button_text = "go plimbo"
+text = "Page 1"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1043128280]
+[node name="Control" parent="Page1/VBoxContainer" unique_id=484371402 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
+layout_mode = 2
+destination = NodePath("../../../Page2/Marker2D")
+control = NodePath("../../..")
+button_text = "View Portrait"
+load_time = 1.5
+
+[node name="Control2" parent="Page1/VBoxContainer" unique_id=1181311645 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
+layout_mode = 2
+destination = NodePath("../../../Page3/Marker2D")
+control = NodePath("../../..")
+button_text = "View Hand"
+load_time = 1.5
+
+[node name="Control3" parent="Page1/VBoxContainer" unique_id=146625593 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
+layout_mode = 2
+destination = NodePath("../../../Page4/Marker2D")
+control = NodePath("../../..")
+button_text = "Conclude"
+
+[node name="Marker2D" type="Marker2D" parent="Page1" unique_id=849652550]
+position = Vector2(576, 325)
+
+[node name="Page2" type="HBoxContainer" parent="." unique_id=1153698348]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -576.0
-offset_top = 324.0
-offset_right = -576.0
-offset_bottom = 324.0
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 649.296
+offset_bottom = 649.296
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer2" unique_id=890125946]
+[node name="VBoxContainer" type="VBoxContainer" parent="Page2" unique_id=1747925759]
 layout_mode = 2
-text = "plimbo"
+alignment = 1
+
+[node name="Label" type="Label" parent="Page2/VBoxContainer" unique_id=575067377]
+layout_mode = 2
+text = "Portrait of subject"
 horizontal_alignment = 1
 
-[node name="Marker2D" type="Marker2D" parent="VBoxContainer2" unique_id=1527155491]
-position = Vector2(576, 324)
-
-[node name="Control" parent="VBoxContainer2" unique_id=484371402 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
+[node name="TextureRect" type="TextureRect" parent="Page2/VBoxContainer" unique_id=614567099]
 layout_mode = 2
-destination = NodePath("../../VBoxContainer/Marker2D")
-control = NodePath("../..")
-button_text = "go back to scrimble!!!"
+texture = ExtResource("3_rgh2o")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Control" parent="Page2/VBoxContainer" unique_id=838802523 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
+layout_mode = 2
+destination = NodePath("../../../Page1/Marker2D")
+control = NodePath("../../..")
+button_text = "go to Page 1"
+
+[node name="Marker2D" type="Marker2D" parent="Page2" unique_id=2121801366]
+position = Vector2(576, 325)
+
+[node name="Page3" type="HBoxContainer" parent="." unique_id=1951553313]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 1297.296
+offset_bottom = 1297.296
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page3" unique_id=408430377]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Page3/VBoxContainer" unique_id=494484425]
+layout_mode = 2
+text = "Image of subject's hand"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Page3/VBoxContainer" unique_id=1396865449]
+layout_mode = 2
+texture = ExtResource("4_pbw6q")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Control" parent="Page3/VBoxContainer" unique_id=1301399438 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
+layout_mode = 2
+destination = NodePath("../../../Page1/Marker2D")
+control = NodePath("../../..")
+button_text = "go to Page 1"
+
+[node name="Marker2D" type="Marker2D" parent="Page3" unique_id=1809962703]
+position = Vector2(576, 325)
+
+[node name="Page4" type="HBoxContainer" parent="." unique_id=2079015467]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 1950.296
+offset_bottom = 1950.296
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page4" unique_id=1911470518]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Page4/VBoxContainer" unique_id=879194893]
+layout_mode = 2
+text = "Verdict"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Page4/VBoxContainer" unique_id=1499477014]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Control2" parent="Page4/VBoxContainer/HBoxContainer" unique_id=521978819 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
+layout_mode = 2
+destination = NodePath("../../../../Page5/Marker2D")
+control = NodePath("../../../..")
+button_text = "Human"
+additional_functions = Array[String](["process_subject"])
+additional_arguments = [false]
+
+[node name="VSeparator" type="VSeparator" parent="Page4/VBoxContainer/HBoxContainer" unique_id=1242791469]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Control" parent="Page4/VBoxContainer/HBoxContainer" unique_id=1031914440 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
+layout_mode = 2
+destination = NodePath("../../../../Page5/Marker2D")
+control = NodePath("../../../..")
+button_text = "AI"
+additional_functions = Array[String](["process_subject"])
+additional_arguments = [true]
+
+[node name="Control" parent="Page4/VBoxContainer" unique_id=801236639 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
+layout_mode = 2
+destination = NodePath("../../../Page1/Marker2D")
+control = NodePath("../../..")
+button_text = "Back"
+
+[node name="Marker2D" type="Marker2D" parent="Page4" unique_id=1651378442]
+position = Vector2(576, 325)
+
+[node name="Page5" type="HBoxContainer" parent="." unique_id=625840635]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 2600.296
+offset_bottom = 2600.296
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page5" unique_id=1575402982]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Page5/VBoxContainer" unique_id=653397307]
+layout_mode = 2
+text = "Processing subject..."
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Page5/VBoxContainer" unique_id=1353564662]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+show_percentage = false
+
+[node name="Marker2D" type="Marker2D" parent="Page5" unique_id=296245340]
+position = Vector2(576, 325)

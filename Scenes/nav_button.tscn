@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://do775sn8mkno4" path="res://Scripts/nav_button.gd" id="1_2jf57"]
 
 [node name="Control" type="Control" unique_id=484371402 node_paths=PackedStringArray("button")]
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,6 +14,7 @@ script = ExtResource("1_2jf57")
 button = NodePath("Button")
 
 [node name="Button" type="Button" parent="." unique_id=1814914302]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
