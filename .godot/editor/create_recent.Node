@@ -1,3 +1,5 @@
+Button
+CenterContainer
 Label
 CanvasLayer
 ProgressBar
@@ -10,5 +12,3 @@ Sprite2D
 Marker2D
 VBoxContainer
 MarginContainer
-Button
-Control

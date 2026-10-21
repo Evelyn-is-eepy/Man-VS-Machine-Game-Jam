@@ -264,7 +264,7 @@ additional_functions = Array[String](["process_subject"])
 additional_arguments = [false]
 
 [node name="VSeparator" type="VSeparator" parent="Page4/VBoxContainer/HBoxContainer" unique_id=1242791469]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 mouse_filter = 2
 
