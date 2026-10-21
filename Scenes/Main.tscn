@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://bdihjua88vqfs"]
 
 [ext_resource type="Script" uid="uid://du8am0l3ja1of" path="res://Scripts/main.gd" id="1_idj7w"]
+[ext_resource type="FontFile" uid="uid://bm72eatk5ovw1" path="res://Assets/Fonts/Web437_IBM_BIOS-2y.woff" id="1_v1gob"]
 [ext_resource type="PackedScene" uid="uid://s17ujet3gkyr" path="res://Scenes/nav_button.tscn" id="2_kln2b"]
 [ext_resource type="Texture2D" uid="uid://bwok3ucdm8nfo" path="res://Assets/Sprites/Portraits/Human/human_1.png" id="3_rgh2o"]
 [ext_resource type="Texture2D" uid="uid://ckib1w2jdyibk" path="res://Assets/Sprites/Hands/Human/human_H_1.png" id="4_pbw6q"]
 [ext_resource type="Texture2D" uid="uid://bw6jsu2028ps4" path="res://Assets/Sprites/New Piskel (1).png" id="5_pbw6q"]
+[ext_resource type="StyleBox" uid="uid://cthjhajrb37wm" path="res://Assets/Themes/button_theme.tres" id="7_jw32o"]
+
+[sub_resource type="Theme" id="Theme_jw32o"]
+default_font = ExtResource("1_v1gob")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v1gob"]
 atlas = ExtResource("5_pbw6q")
@@ -70,7 +75,12 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Control" type="Control" unique_id=321524383 node_paths=PackedStringArray("camera", "loading_screen", "portrait_rect", "hand_rect", "portrait_screen", "processing_bar", "quota_tracker")]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_50glp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vy5pj"]
+bg_color = Color(1, 0.627451, 0, 1)
+
+[node name="Control" type="Control" unique_id=321524383 node_paths=PackedStringArray("camera", "loading_screen", "portrait_rect", "hand_rect", "portrait_screen", "processing_bar", "quota_tracker", "response_box")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,6 +88,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme = SubResource("Theme_jw32o")
 script = ExtResource("1_idj7w")
 camera = NodePath("Camera2D")
 loading_screen = NodePath("Camera2D/CanvasLayer")
@@ -90,8 +101,11 @@ portrait_screen = NodePath("Page2/Marker2D")
 processing_bar = NodePath("Page5/VBoxContainer/ProgressBar")
 quota = 10
 quota_tracker = NodePath("UILayer/Label")
+response_box = NodePath("Page6/VBoxContainer/RichTextLabel")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=163684619]
+position = Vector2(0, 648)
+zoom = Vector2(2, 2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=1973993511]
 visible = false
@@ -103,9 +117,10 @@ offset_left = -670.0
 offset_top = -380.0
 offset_right = 631.0
 offset_bottom = 418.0
-color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D/CanvasLayer" unique_id=1432970462]
+modulate = Color(0.72156864, 0.14901961, 0.003921569, 1)
 sprite_frames = SubResource("SpriteFrames_1p5hy")
 autoplay = "default"
 frame_progress = 0.83917195
@@ -125,11 +140,8 @@ alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Page1" unique_id=2108608652]
 layout_mode = 2
+theme_override_constants/separation = 10
 alignment = 1
-
-[node name="Label" type="Label" parent="Page1/VBoxContainer" unique_id=231439802]
-layout_mode = 2
-text = "Page 1"
 
 [node name="Control" parent="Page1/VBoxContainer" unique_id=484371402 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
 layout_mode = 2
@@ -169,6 +181,7 @@ alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Page2" unique_id=1747925759]
 layout_mode = 2
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Label" type="Label" parent="Page2/VBoxContainer" unique_id=575067377]
@@ -177,19 +190,46 @@ text = "Portrait of subject"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Page2/VBoxContainer" unique_id=614567099]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 texture = ExtResource("3_rgh2o")
 expand_mode = 4
 stretch_mode = 4
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Page2/VBoxContainer" unique_id=484862100]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Page2/VBoxContainer/HBoxContainer" unique_id=875215156]
+layout_mode = 2
+
+[node name="Control2" parent="Page2/VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=148418125 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
+layout_mode = 2
+destination = NodePath("../../../../../Page3/Marker2D")
+control = NodePath("../../../../..")
+button_text = "View Hand"
+load_time = 1.5
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Page2/VBoxContainer/HBoxContainer" unique_id=13510554]
+layout_mode = 2
+alignment = 2
+
+[node name="Control2" parent="Page2/VBoxContainer/HBoxContainer/HBoxContainer3" unique_id=1155140039 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
+layout_mode = 2
+destination = NodePath("../../../../../Page6/Marker2D")
+control = NodePath("../../../../..")
+button_text = "Interrogate"
+load_time = 3.0
+
 [node name="Control" parent="Page2/VBoxContainer" unique_id=838802523 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
 layout_mode = 2
-destination = NodePath("../../../Page1/Marker2D")
+destination = NodePath("../../../Page4/Marker2D")
 control = NodePath("../../..")
-button_text = "go to Page 1"
+button_text = "Next"
 
 [node name="Marker2D" type="Marker2D" parent="Page2" unique_id=2121801366]
-position = Vector2(576, 325)
+position = Vector2(576, 324)
 
 [node name="Page3" type="HBoxContainer" parent="." unique_id=1951553313]
 layout_mode = 1
@@ -206,6 +246,7 @@ alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Page3" unique_id=408430377]
 layout_mode = 2
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Label" type="Label" parent="Page3/VBoxContainer" unique_id=494484425]
@@ -214,6 +255,7 @@ text = "Image of subject's hand"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Page3/VBoxContainer" unique_id=1396865449]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 texture = ExtResource("4_pbw6q")
 expand_mode = 4
@@ -221,11 +263,55 @@ stretch_mode = 4
 
 [node name="Control" parent="Page3/VBoxContainer" unique_id=1301399438 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
 layout_mode = 2
-destination = NodePath("../../../Page1/Marker2D")
+destination = NodePath("../../../Page2/Marker2D")
 control = NodePath("../../..")
-button_text = "go to Page 1"
+button_text = "Return"
 
 [node name="Marker2D" type="Marker2D" parent="Page3" unique_id=1809962703]
+position = Vector2(576, 325)
+
+[node name="Page6" type="HBoxContainer" parent="." unique_id=1122294657]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_left = 1209.0
+offset_top = 1297.296
+offset_right = 1209.0
+offset_bottom = 1297.296
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page6" unique_id=772500405]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="Page6/VBoxContainer" unique_id=2067619879]
+layout_mode = 2
+text = "Prompt: Say something to
+prove that you are
+human."
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Page6/VBoxContainer" unique_id=68575985]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.627451, 0, 1)
+text = "can't I just go home..?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" parent="Page6/VBoxContainer" unique_id=1041029865 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
+layout_mode = 2
+destination = NodePath("../../../Page2/Marker2D")
+control = NodePath("../../..")
+button_text = "Return"
+
+[node name="Marker2D" type="Marker2D" parent="Page6" unique_id=456539683]
 position = Vector2(576, 325)
 
 [node name="Page4" type="HBoxContainer" parent="." unique_id=2079015467]
@@ -243,19 +329,21 @@ alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Page4" unique_id=1911470518]
 layout_mode = 2
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Label" type="Label" parent="Page4/VBoxContainer" unique_id=879194893]
 layout_mode = 2
-text = "Verdict"
+text = "Verdict?"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Page4/VBoxContainer" unique_id=1499477014]
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 alignment = 1
 
 [node name="Control2" parent="Page4/VBoxContainer/HBoxContainer" unique_id=521978819 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 destination = NodePath("../../../../Page5/Marker2D")
 control = NodePath("../../../..")
@@ -267,8 +355,10 @@ additional_arguments = [false]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 mouse_filter = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_50glp")
 
 [node name="Control" parent="Page4/VBoxContainer/HBoxContainer" unique_id=1031914440 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 destination = NodePath("../../../../Page5/Marker2D")
 control = NodePath("../../../..")
@@ -278,9 +368,9 @@ additional_arguments = [true]
 
 [node name="Control" parent="Page4/VBoxContainer" unique_id=801236639 node_paths=PackedStringArray("destination", "control") instance=ExtResource("2_kln2b")]
 layout_mode = 2
-destination = NodePath("../../../Page1/Marker2D")
+destination = NodePath("../../../Page2/Marker2D")
 control = NodePath("../../..")
-button_text = "Back"
+button_text = "Return"
 
 [node name="Marker2D" type="Marker2D" parent="Page4" unique_id=1651378442]
 position = Vector2(576, 325)
@@ -300,6 +390,7 @@ alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Page5" unique_id=1575402982]
 layout_mode = 2
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Label" type="Label" parent="Page5/VBoxContainer" unique_id=653397307]
@@ -310,6 +401,9 @@ horizontal_alignment = 1
 [node name="ProgressBar" type="ProgressBar" parent="Page5/VBoxContainer" unique_id=1353564662]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+theme_override_styles/background = ExtResource("7_jw32o")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vy5pj")
+value = 28.23
 show_percentage = false
 
 [node name="Marker2D" type="Marker2D" parent="Page5" unique_id=296245340]
@@ -322,4 +416,19 @@ offset_left = 19.0
 offset_top = 16.0
 offset_right = 59.0
 offset_bottom = 39.0
-text = "Subjects processed: x/x"
+theme_override_colors/font_color = Color(0.72156864, 0.14901961, 0.003921569, 1)
+theme_override_fonts/font = ExtResource("1_v1gob")
+theme_override_font_sizes/font_size = 32
+text = "Processed: x/x"
+
+[node name="Label" type="Label" parent="UILayer/Label" unique_id=1837879972]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 4.0
+offset_right = 1108.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.72156864, 0.14901961, 0.003921569, 1)
+theme_override_fonts/font = ExtResource("1_v1gob")
+theme_override_font_sizes/font_size = 32
+text = "xx:xx"
+horizontal_alignment = 2

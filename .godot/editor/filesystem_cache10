@@ -1,7 +1,9 @@
 63f7b34db8d8cdea90c76aacccf841ec
 ::res://::1792457991
 icon.svg::CompressedTexture2D::8798084810440695112::1792366567::1792366572::1::::<><><>0<>0<>4defa5004d339408328d72198b231dfd<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://Assets/::1792457991
+::res://Assets/::1792542015
+::res://Assets/Fonts/::1792542301
+Web437_IBM_BIOS-2y.woff::FontFile::3296393427306020138::1792542301::1792542345::1::::<><><>0<>0<>afa1279bc3824ab5c13b71abf277d0ca<>res://.godot/imported/Web437_IBM_BIOS-2y.woff-fba292714617e6f9c258a3bbc6ebc3ec.fontdata::
 ::res://Assets/Sprites/::1792462122
 New Piskel (1).png::CompressedTexture2D::3995150644680856661::1792452466::1792452507::1::::<><><>0<>0<>e4a9c7bd00c90560e7c048e4d3c372ca<>res://.godot/imported/New Piskel (1).png-d284e9ed0a56ad6adad1db8ad815b773.ctex::
 ::res://Assets/Sprites/Hands/::1792457945
@@ -11,7 +13,7 @@ AI_H_2.png::CompressedTexture2D::727375310713102332::1792458081::1792458120::1::
 ::res://Assets/Sprites/Hands/Human/::1792457991
 human_H_1.png::CompressedTexture2D::5491353171070600732::1792449875::1792457991::1::::<><><>0<>0<>2834675f43b68b93cae3962be360ed86<>res://.godot/imported/human_H_1.png-0cc832e77859d22077b6ecd6e6a0ce25.ctex::
 ::res://Assets/Sprites/Portraits/::1792457647
-::res://Assets/Sprites/Portraits/AI/::1792481384
+::res://Assets/Sprites/Portraits/AI/::1792481388
 AI-5.png::CompressedTexture2D::7240809447865527084::1792479668::1792481388::1::::<><><>0<>0<>87d4670f43c5f3488ab546d52fdaa805<>res://.godot/imported/AI-5.png-01ebb72aeb0bd05a48c3db30cb32a62a.ctex::
 AI_1.png::CompressedTexture2D::6011663422475646961::1792457756::1792457758::1::::<><><>0<>0<>4580f7aac663a77096bc4236eae402bb<>res://.godot/imported/AI_1.png-9723e80a40d7de76ebd9b23006648ade.ctex::
 AI_2.png::CompressedTexture2D::2811480827320981316::1792459465::1792459467::1::::<><><>0<>0<>89cbf3f8db24706ba550dc3c75b3b55f<>res://.godot/imported/AI_2.png-1794980f4e5bb1ad76f48f402bcafdfe.ctex::
@@ -22,15 +24,15 @@ AI_7.png::CompressedTexture2D::574224044792373114::1792480515::1792481388::1::::
 AI_8.png::CompressedTexture2D::3019896798262800698::1792480539::1792481388::1::::<><><>0<>0<>22865eccaf8a1680ccc464fbc1fef364<>res://.godot/imported/AI_8.png-1e61f96a3512e93e2680b0c961c49a6c.ctex::
 AI_9.png::CompressedTexture2D::3243975318726114704::1792481308::1792481388::1::::<><><>0<>0<>77b8fdba8b0775d80d4e793199e9e621<>res://.godot/imported/AI_9.png-7b5bb7ad82539a37783ae2cf57465fea.ctex::
 AI_10.png::CompressedTexture2D::4214935279115220247::1792481384::1792481388::1::::<><><>0<>0<>80a744b4a3edc8ffa82bddac2b902983<>res://.godot/imported/AI_10.png-69fd73e5c5f67d827c25bc1c25b4f148.ctex::
-::res://Assets/Sprites/Portraits/Human/::1792481251
+::res://Assets/Sprites/Portraits/Human/::1792481388
 human_1.png::CompressedTexture2D::3960134758153918356::1792449512::1792457683::1::::<><><>0<>0<>6c69472342262aaaeb20a371615fd097<>res://.godot/imported/human_1.png-45eb2f4d7cbd993568aa1ec090a718fd.ctex::
 human_2.png::CompressedTexture2D::1603470665084473356::1792459666::1792459753::1::::<><><>0<>0<>eaf127d9f3495aeaacefd2ccf987a2c2<>res://.godot/imported/human_2.png-da884422a83d3db14201048f4cdf50fc.ctex::
 human_3.png::CompressedTexture2D::4383612491836339922::1792479638::1792481388::1::::<><><>0<>0<>91030f9a0bf698c10b8408067f4ef8e2<>res://.godot/imported/human_3.png-222383d4360fc657f6fd7d6b6c23edec.ctex::
 human_4.png::CompressedTexture2D::6237964647629878849::1792480490::1792481388::1::::<><><>0<>0<>7e146fdcf711b002ca8a1f4c6aa1a890<>res://.godot/imported/human_4.png-ed882c4640b4a511099d31230edff4aa.ctex::
 human_5.png::CompressedTexture2D::2744026632114212714::1792481251::1792481388::1::::<><><>0<>0<>06ff745dc77e60572af084d47abcb30a<>res://.godot/imported/human_5.png-ba3c9d94c2b1ed408027480c8984ed4d.ctex::
-::res://Scenes/::1792461602
-Main.tscn::PackedScene::2613944379745500756::1792461602::0::1::::<><><>0<>0<><>::uid://du8am0l3ja1of::::res://Scripts/main.gd<>uid://s17ujet3gkyr::::res://Scenes/nav_button.tscn<>uid://bwok3ucdm8nfo::::res://Assets/Sprites/Portraits/Human/human_1.png<>uid://ckib1w2jdyibk::::res://Assets/Sprites/Hands/Human/human_H_1.png<>uid://bw6jsu2028ps4::::res://Assets/Sprites/New Piskel (1).png
-nav_button.tscn::PackedScene::1319052146527069497::1792451239::0::1::::<><><>0<>0<><>::uid://do775sn8mkno4::::res://Scripts/nav_button.gd
-::res://Scripts/::1792461850
-main.gd::GDScript::8631186150611633817::1792461850::0::1::::<>Control<><>0<>0<><>::
-nav_button.gd::GDScript::8209963434745916701::1792460614::0::1::::<>Control<><>0<>0<><>::
+::res://Scenes/::1792541932
+Main.tscn::PackedScene::2613944379745500756::1792541932::0::1::::<><><>0<>0<><>::uid://du8am0l3ja1of::::res://Scripts/main.gd<>uid://s17ujet3gkyr::::res://Scenes/nav_button.tscn<>uid://bwok3ucdm8nfo::::res://Assets/Sprites/Portraits/Human/human_1.png<>uid://ckib1w2jdyibk::::res://Assets/Sprites/Hands/Human/human_H_1.png<>uid://bw6jsu2028ps4::::res://Assets/Sprites/New Piskel (1).png
+nav_button.tscn::PackedScene::1319052146527069497::1792541031::0::1::::<><><>0<>0<><>::uid://do775sn8mkno4::::res://Scripts/nav_button.gd
+::res://Scripts/::1792540865
+main.gd::GDScript::8631186150611633817::1792532141::0::1::::<>Control<><>0<>0<><>::
+nav_button.gd::GDScript::8209963434745916701::1792540865::0::1::::<>Control<><>0<>0<><>::

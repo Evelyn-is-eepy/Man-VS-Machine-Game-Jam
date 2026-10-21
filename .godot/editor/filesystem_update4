@@ -2,3 +2,4 @@ res://Scripts/nav_button.gd
 res://Scenes/nav_button.tscn
 res://Scripts/main.gd
 res://Scenes/Main.tscn
+res://Scenes/Intermission.tscn
