@@ -33,6 +33,7 @@ const FAIL_SCENE = ""
 @export var can_pass_both: bool
 @export var is_intermission: bool
 @export var next_scene: String
+@export var ignore_loss: bool
 
 var ai_hands: Array = []
 var human_hands: Array = []
@@ -68,6 +69,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_right"):
+		subjects_processed = 100
+		score = 100
+		to_next_scene()
 	if not is_intermission:
 		time_remaining = move_toward(time_remaining, 0.0, delta)
 		update_timer(time_remaining)
@@ -155,7 +160,7 @@ func to_next_scene():
 	if (not is_intermission):
 		if subjects_processed < quota:
 			score -= QUOTA_PUNISHMENT
-		if score <= 0:
+		if score <= 0 and not ignore_loss:
 			get_tree().change_scene_to_file(FAIL_SCENE)
 	get_tree().change_scene_to_file(next_scene)
 

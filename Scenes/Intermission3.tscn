@@ -7,7 +7,7 @@
 [sub_resource type="Theme" id="Theme_jw32o"]
 default_font = ExtResource("1_x523l")
 
-[node name="Control" type="Control" unique_id=321524383 node_paths=PackedStringArray("camera", "loading_screen", "portrait_rect", "hand_rect", "portrait_screen", "processing_bar", "quota_tracker", "response_box")]
+[node name="Control" type="Control" unique_id=321524383 node_paths=PackedStringArray("camera", "quota_tracker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,19 +17,14 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme = SubResource("Theme_jw32o")
 script = ExtResource("2_anixx")
-camera = NodePath("")
-loading_screen = NodePath("")
-portrait_rect = NodePath("")
-hand_rect = NodePath("")
+camera = NodePath("Camera2D")
 ai_chance = 0.2
 face_passing_chance = 0.2
 hand_passing_chance = 0.1
-portrait_screen = NodePath("")
-processing_bar = NodePath("")
 quota = 10
 quota_tracker = NodePath("UILayer/Label")
-response_box = NodePath("")
 is_intermission = true
+next_scene = "res://Scenes/Level3.tscn"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1977575525]
 position = Vector2(-1, 0)
@@ -60,7 +55,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Page1/VBoxContainer2/VBoxContainer" unique_id=276583814]
 layout_mode = 2
-text = "1 DAY SINCE DISASTER"
+text = "3 DAYS SINCE DISASTER"
 horizontal_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Page1/VBoxContainer2" unique_id=901309587]
@@ -113,7 +108,9 @@ alignment = 1
 [node name="Label2" type="Label" parent="Page2/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=461663239]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.627451, 0, 1)
-text = "get working y'all"
+text = "The machines are learning. But we will
+not be outsmarted.
+Continue with your duty."
 horizontal_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Page2/VBoxContainer2" unique_id=1420096578]
@@ -126,6 +123,7 @@ alignment = 1
 layout_mode = 2
 control = NodePath("../../../..")
 button_text = "Next"
+additional_functions = Array[String](["to_next_scene"])
 
 [node name="Marker2D" type="Marker2D" parent="Page2" unique_id=114006086]
 position = Vector2(576, 325)

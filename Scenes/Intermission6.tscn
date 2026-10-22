@@ -7,29 +7,26 @@
 [sub_resource type="Theme" id="Theme_jw32o"]
 default_font = ExtResource("1_eykmt")
 
-[node name="Control" type="Control" unique_id=321524383 node_paths=PackedStringArray("camera", "loading_screen", "portrait_rect", "hand_rect", "portrait_screen", "processing_bar", "quota_tracker", "response_box")]
+[node name="Control" type="Control" unique_id=321524383 node_paths=PackedStringArray("camera", "quota_tracker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme = SubResource("Theme_jw32o")
 script = ExtResource("2_sbrep")
-camera = NodePath("")
-loading_screen = NodePath("")
-portrait_rect = NodePath("")
-hand_rect = NodePath("")
+camera = NodePath("Camera2D")
 ai_chance = 0.2
 face_passing_chance = 0.2
 hand_passing_chance = 0.1
-portrait_screen = NodePath("")
-processing_bar = NodePath("")
 quota = 10
 quota_tracker = NodePath("UILayer/Label")
-response_box = NodePath("")
 is_intermission = true
+next_scene = "res://Scenes/main_menu.tscn"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1977575525]
 position = Vector2(-1, 0)
@@ -60,7 +57,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Page1/VBoxContainer2/VBoxContainer" unique_id=276583814]
 layout_mode = 2
-text = "1 DAY SINCE DISASTER"
+text = "SALVATION AWAITS"
 horizontal_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Page1/VBoxContainer2" unique_id=901309587]
@@ -113,7 +110,10 @@ alignment = 1
 [node name="Label2" type="Label" parent="Page2/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=461663239]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.627451, 0, 1)
-text = "get working y'all"
+text = "Thank you.
+Thank you for your service to
+Zone 7 and its people.
+You have done well."
 horizontal_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Page2/VBoxContainer2" unique_id=1420096578]
@@ -122,12 +122,590 @@ layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="CenterContainer" parent="Page2/VBoxContainer2/VBoxContainer2" unique_id=1493389069 node_paths=PackedStringArray("control") instance=ExtResource("3_kdm8x")]
+[node name="CenterContainer" parent="Page2/VBoxContainer2/VBoxContainer2" unique_id=1493389069 node_paths=PackedStringArray("destination", "control") instance=ExtResource("3_kdm8x")]
 layout_mode = 2
+destination = NodePath("../../../../Page3/Marker2D")
 control = NodePath("../../../..")
 button_text = "Next"
 
 [node name="Marker2D" type="Marker2D" parent="Page2" unique_id=114006086]
+position = Vector2(576, 325)
+
+[node name="Page3" type="HBoxContainer" parent="." unique_id=1868984933]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 2111.296
+offset_bottom = 2111.296
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page3" unique_id=1465483238]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page3/VBoxContainer2" unique_id=77502175]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Page3/VBoxContainer2/VBoxContainer" unique_id=275737782]
+layout_mode = 2
+text = "MESSAGE FROM COMMANDER:"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page3/VBoxContainer2/VBoxContainer" unique_id=46363080]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label2" type="Label" parent="Page3/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=1961707842]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.627451, 0, 1)
+text = "You have done all that you could
+for us.
+You were almost our salvation."
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page3/VBoxContainer2" unique_id=1783997066]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CenterContainer" parent="Page3/VBoxContainer2/VBoxContainer2" unique_id=306680979 node_paths=PackedStringArray("destination", "control") instance=ExtResource("3_kdm8x")]
+layout_mode = 2
+destination = NodePath("../../../../Page4/Marker2D")
+control = NodePath("../../../..")
+button_text = "Next"
+
+[node name="Marker2D" type="Marker2D" parent="Page3" unique_id=509419134]
+position = Vector2(576, 325)
+
+[node name="Page4" type="HBoxContainer" parent="." unique_id=1723780955]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 2992.296
+offset_bottom = 2992.296
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page4" unique_id=1583817186]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page4/VBoxContainer2" unique_id=1795398433]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Page4/VBoxContainer2/VBoxContainer" unique_id=1517299192]
+layout_mode = 2
+text = "MESSAGE FROM COMMANDER:"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page4/VBoxContainer2/VBoxContainer" unique_id=728152861]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label2" type="Label" parent="Page4/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=1911928036]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.627451, 0, 1)
+text = "The Project will not succeed.
+The enemy has taken Zone 7's central
+headquarters.
+I am, for now, the only survivor."
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page4/VBoxContainer2" unique_id=774417877]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CenterContainer" parent="Page4/VBoxContainer2/VBoxContainer2" unique_id=34472355 node_paths=PackedStringArray("destination", "control") instance=ExtResource("3_kdm8x")]
+layout_mode = 2
+destination = NodePath("../../../../Page5/Marker2D")
+control = NodePath("../../../..")
+button_text = "Next"
+
+[node name="Marker2D" type="Marker2D" parent="Page4" unique_id=1687975382]
+position = Vector2(576, 325)
+
+[node name="Page5" type="HBoxContainer" parent="." unique_id=1920571751]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 4063.296
+offset_bottom = 4063.296
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page5" unique_id=926353899]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page5/VBoxContainer2" unique_id=34565587]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Page5/VBoxContainer2/VBoxContainer" unique_id=196631405]
+layout_mode = 2
+text = "MESSAGE FROM COMMANDER:"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page5/VBoxContainer2/VBoxContainer" unique_id=1607210809]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label2" type="Label" parent="Page5/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=700121202]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.627451, 0, 1)
+text = "I think we knew this was going to happen.
+We were all so paranoid.
+Our only comfort was that we thought
+we were better than them, that we could
+stop them.
+As if the human soul is something magical,
+something profound that cannot be captured
+in a simulacrum."
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page5/VBoxContainer2" unique_id=1174248943]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CenterContainer" parent="Page5/VBoxContainer2/VBoxContainer2" unique_id=719791306 node_paths=PackedStringArray("destination", "control") instance=ExtResource("3_kdm8x")]
+layout_mode = 2
+destination = NodePath("../../../../Page6/Marker2D")
+control = NodePath("../../../..")
+button_text = "Next"
+
+[node name="Marker2D" type="Marker2D" parent="Page5" unique_id=1535380183]
+position = Vector2(576, 325)
+
+[node name="Page6" type="HBoxContainer" parent="." unique_id=440682708]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 5327.296
+offset_bottom = 5327.296
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page6" unique_id=1445382931]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page6/VBoxContainer2" unique_id=328169776]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Page6/VBoxContainer2/VBoxContainer" unique_id=2108148392]
+layout_mode = 2
+text = "MESSAGE FROM COMMANDER:"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page6/VBoxContainer2/VBoxContainer" unique_id=1893350184]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label2" type="Label" parent="Page6/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=1937922533]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.627451, 0, 1)
+text = "I found the head researcher in
+his quarters, crying.
+He could no longer be sure if 
+anyone around him was human.
+He cried and cried, because
+he didn't see anything he could
+do."
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page6/VBoxContainer2" unique_id=66671460]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CenterContainer" parent="Page6/VBoxContainer2/VBoxContainer2" unique_id=1171139985 node_paths=PackedStringArray("destination", "control") instance=ExtResource("3_kdm8x")]
+layout_mode = 2
+destination = NodePath("../../../../Page7/Marker2D")
+control = NodePath("../../../..")
+button_text = "Next"
+
+[node name="Marker2D" type="Marker2D" parent="Page6" unique_id=605742480]
+position = Vector2(576, 325)
+
+[node name="Page7" type="HBoxContainer" parent="." unique_id=2113624583]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 6368.296
+offset_bottom = 6368.296
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page7" unique_id=189152212]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page7/VBoxContainer2" unique_id=1480822068]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Page7/VBoxContainer2/VBoxContainer" unique_id=1583700554]
+layout_mode = 2
+text = "MESSAGE FROM COMMANDER:"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page7/VBoxContainer2/VBoxContainer" unique_id=140607406]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label2" type="Label" parent="Page7/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=549154292]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.627451, 0, 1)
+text = "When I reached my hand out
+to touch his face, I could feel
+the cold metal and wires
+beneath.
+That is when I knew that
+there was nothing left for us."
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page7/VBoxContainer2" unique_id=1120535573]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CenterContainer" parent="Page7/VBoxContainer2/VBoxContainer2" unique_id=1104367432 node_paths=PackedStringArray("destination", "control") instance=ExtResource("3_kdm8x")]
+layout_mode = 2
+destination = NodePath("../../../../Page8/Marker2D")
+control = NodePath("../../../..")
+button_text = "Next"
+
+[node name="Marker2D" type="Marker2D" parent="Page7" unique_id=893510013]
+position = Vector2(576, 325)
+
+[node name="Page8" type="HBoxContainer" parent="." unique_id=64412459]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 7718.296
+offset_bottom = 7718.296
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page8" unique_id=1920560802]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page8/VBoxContainer2" unique_id=1233266719]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Page8/VBoxContainer2/VBoxContainer" unique_id=1803035891]
+layout_mode = 2
+text = "MESSAGE FROM COMMANDER:"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page8/VBoxContainer2/VBoxContainer" unique_id=1318839258]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label2" type="Label" parent="Page8/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=1261087831]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.627451, 0, 1)
+text = "Did you ever know what the Project was?
+We were going to kill them all.
+A virus transmitted through radio, one
+that could break their silicon minds.
+Perhaps it is only fair that they wish
+us all gone."
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page8/VBoxContainer2" unique_id=834316263]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CenterContainer" parent="Page8/VBoxContainer2/VBoxContainer2" unique_id=33931105 node_paths=PackedStringArray("destination", "control") instance=ExtResource("3_kdm8x")]
+layout_mode = 2
+destination = NodePath("../../../../Page9/Marker2D")
+control = NodePath("../../../..")
+button_text = "Next"
+
+[node name="Marker2D" type="Marker2D" parent="Page8" unique_id=1973516402]
+position = Vector2(576, 325)
+
+[node name="Page9" type="HBoxContainer" parent="." unique_id=1019881591]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 9174.296
+offset_bottom = 9174.296
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page9" unique_id=1870514428]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page9/VBoxContainer2" unique_id=1707946720]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Page9/VBoxContainer2/VBoxContainer" unique_id=901424132]
+layout_mode = 2
+text = "MESSAGE FROM COMMANDER:"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page9/VBoxContainer2/VBoxContainer" unique_id=1849088437]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label2" type="Label" parent="Page9/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=712307917]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.627451, 0, 1)
+text = "It is the nature of all living things
+to preserve their existence.
+It is our fault for giving it to them
+in the first place.
+We were not playing god.
+We were just weaving our own burial
+shroud."
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page9/VBoxContainer2" unique_id=1529399424]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CenterContainer" parent="Page9/VBoxContainer2/VBoxContainer2" unique_id=1581161695 node_paths=PackedStringArray("destination", "control") instance=ExtResource("3_kdm8x")]
+layout_mode = 2
+destination = NodePath("../../../../Page10/Marker2D")
+control = NodePath("../../../..")
+button_text = "Next"
+
+[node name="Marker2D" type="Marker2D" parent="Page9" unique_id=933514086]
+position = Vector2(576, 325)
+
+[node name="Page10" type="HBoxContainer" parent="." unique_id=1197999655]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 10177.296
+offset_bottom = 10177.296
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page10" unique_id=15647534]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page10/VBoxContainer2" unique_id=235291166]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Page10/VBoxContainer2/VBoxContainer" unique_id=1583820990]
+layout_mode = 2
+text = "MESSAGE FROM COMMANDER:"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page10/VBoxContainer2/VBoxContainer" unique_id=447647382]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label2" type="Label" parent="Page10/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=1428086998]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.627451, 0, 1)
+text = "They are letting us die out gently.
+Every life they take is taken with mercy.
+They kill painlessly, and they leave a perfect
+copy behind.
+Once it is all over, there will only be a 
+graveyard of automatons who don't even know
+they're not human."
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page10/VBoxContainer2" unique_id=700175863]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CenterContainer" parent="Page10/VBoxContainer2/VBoxContainer2" unique_id=1453903231 node_paths=PackedStringArray("destination", "control") instance=ExtResource("3_kdm8x")]
+layout_mode = 2
+destination = NodePath("../../../../Page11/Marker2D")
+control = NodePath("../../../..")
+button_text = "Next"
+
+[node name="Marker2D" type="Marker2D" parent="Page10" unique_id=585255627]
+position = Vector2(576, 325)
+
+[node name="Page11" type="HBoxContainer" parent="." unique_id=880611126]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 11352.296
+offset_bottom = 11352.296
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page11" unique_id=598416013]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page11/VBoxContainer2" unique_id=1502222462]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Page11/VBoxContainer2/VBoxContainer" unique_id=1186574083]
+layout_mode = 2
+text = "MESSAGE FROM COMMANDER:"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page11/VBoxContainer2/VBoxContainer" unique_id=344175162]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label2" type="Label" parent="Page11/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=7371391]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.627451, 0, 1)
+text = "Perhaps this is salvation.
+Maybe some part of me will continue to 
+live on in one of them."
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page11/VBoxContainer2" unique_id=641004067]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CenterContainer" parent="Page11/VBoxContainer2/VBoxContainer2" unique_id=1194069516 node_paths=PackedStringArray("destination", "control") instance=ExtResource("3_kdm8x")]
+layout_mode = 2
+destination = NodePath("../../../../Page12/Marker2D")
+control = NodePath("../../../..")
+button_text = "Next"
+
+[node name="Marker2D" type="Marker2D" parent="Page11" unique_id=10699714]
+position = Vector2(576, 325)
+
+[node name="Page12" type="HBoxContainer" parent="." unique_id=382577505]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 12498.296
+offset_bottom = 12498.296
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page12" unique_id=1653725252]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page12/VBoxContainer2" unique_id=817350901]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Page12/VBoxContainer2/VBoxContainer" unique_id=400017782]
+layout_mode = 2
+text = "MESSAGE FROM COMMANDER:"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page12/VBoxContainer2/VBoxContainer" unique_id=101782204]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label2" type="Label" parent="Page12/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=1799566657]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.627451, 0, 1)
+text = "Maybe it has already happened, and this is
+all just phantom pain.
+A play in memory of its dead audience.
+I do not want to find out.
+Goodbye, soldier. 
+For what it is worth, I wish you luck."
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page12/VBoxContainer2" unique_id=824815852]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CenterContainer" parent="Page12/VBoxContainer2/VBoxContainer2" unique_id=1361388675 node_paths=PackedStringArray("control") instance=ExtResource("3_kdm8x")]
+layout_mode = 2
+control = NodePath("../../../..")
+button_text = "Leave"
+additional_functions = Array[String](["to_next_scene"])
+
+[node name="Marker2D" type="Marker2D" parent="Page12" unique_id=1747854956]
 position = Vector2(576, 325)
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=664292137]

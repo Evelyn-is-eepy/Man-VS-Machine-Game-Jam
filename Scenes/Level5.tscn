@@ -80,7 +80,7 @@ animations = [{
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vy5pj"]
 bg_color = Color(1, 0.627451, 0, 1)
 
-[node name="Control" type="Control" unique_id=321524383 node_paths=PackedStringArray("camera", "loading_screen", "portrait_rect", "hand_rect", "portrait_screen", "processing_bar", "quota_tracker", "timer", "response_box")]
+[node name="Control" type="Control" unique_id=321524383 node_paths=PackedStringArray("camera", "loading_screen", "portrait_rect", "hand_rect", "portrait_screen", "processing_bar", "processing_label", "quota_tracker", "timer", "response_box")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -94,16 +94,19 @@ camera = NodePath("Camera2D")
 loading_screen = NodePath("Camera2D/CanvasLayer")
 portrait_rect = NodePath("Page2/VBoxContainer/TextureRect")
 hand_rect = NodePath("Page3/VBoxContainer/TextureRect")
-ai_chance = 0.2
-face_passing_chance = 0.2
-hand_passing_chance = 0.1
+ai_chance = 0.6
+face_passing_chance = 0.8
+hand_passing_chance = 0.4
 portrait_screen = NodePath("Page2/Marker2D")
 processing_bar = NodePath("Page5/VBoxContainer/ProgressBar")
-quota = 10
+processing_label = NodePath("Page5/VBoxContainer/Label")
+quota = 20
 level_time = 180
 quota_tracker = NodePath("UILayer/Label")
 timer = NodePath("UILayer/Label2")
 response_box = NodePath("Page6/VBoxContainer/RichTextLabel")
+can_pass_both = true
+ignore_loss = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=163684619]
 position = Vector2(0, 648)

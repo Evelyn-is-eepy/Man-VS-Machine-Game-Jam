@@ -7,7 +7,7 @@
 [sub_resource type="Theme" id="Theme_jw32o"]
 default_font = ExtResource("1_tgxgh")
 
-[node name="Control" type="Control" unique_id=321524383 node_paths=PackedStringArray("camera", "loading_screen", "portrait_rect", "hand_rect", "portrait_screen", "processing_bar", "quota_tracker", "response_box")]
+[node name="Control" type="Control" unique_id=321524383 node_paths=PackedStringArray("camera", "quota_tracker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,19 +17,14 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme = SubResource("Theme_jw32o")
 script = ExtResource("2_p4xum")
-camera = NodePath("")
-loading_screen = NodePath("")
-portrait_rect = NodePath("")
-hand_rect = NodePath("")
+camera = NodePath("Camera2D")
 ai_chance = 0.2
 face_passing_chance = 0.2
 hand_passing_chance = 0.1
-portrait_screen = NodePath("")
-processing_bar = NodePath("")
 quota = 10
 quota_tracker = NodePath("UILayer/Label")
-response_box = NodePath("")
 is_intermission = true
+next_scene = "res://Scenes/Level2.tscn"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1977575525]
 position = Vector2(-1, 0)
@@ -60,7 +55,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Page1/VBoxContainer2/VBoxContainer" unique_id=276583814]
 layout_mode = 2
-text = "1 DAY SINCE DISASTER"
+text = "2 DAYS SINCE DISASTER"
 horizontal_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Page1/VBoxContainer2" unique_id=901309587]
@@ -113,7 +108,9 @@ alignment = 1
 [node name="Label2" type="Label" parent="Page2/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=461663239]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.627451, 0, 1)
-text = "get working y'all"
+text = "The enemy's tactics are advancing.
+AI agents have been found that perfectly
+mimic human facial features."
 horizontal_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Page2/VBoxContainer2" unique_id=1420096578]
@@ -122,12 +119,69 @@ layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="CenterContainer" parent="Page2/VBoxContainer2/VBoxContainer2" unique_id=1493389069 node_paths=PackedStringArray("control") instance=ExtResource("3_u74ha")]
+[node name="CenterContainer" parent="Page2/VBoxContainer2/VBoxContainer2" unique_id=1493389069 node_paths=PackedStringArray("destination", "control") instance=ExtResource("3_u74ha")]
 layout_mode = 2
+destination = NodePath("../../../../Page3/Marker2D")
 control = NodePath("../../../..")
 button_text = "Next"
 
 [node name="Marker2D" type="Marker2D" parent="Page2" unique_id=114006086]
+position = Vector2(576, 325)
+
+[node name="Page3" type="HBoxContainer" parent="." unique_id=1215703787]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 2787.296
+offset_bottom = 2787.296
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page3" unique_id=381706033]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page3/VBoxContainer2" unique_id=1142970694]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Page3/VBoxContainer2/VBoxContainer" unique_id=350721414]
+layout_mode = 2
+text = "MESSAGE FROM COMMANDER:"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page3/VBoxContainer2/VBoxContainer" unique_id=2140495171]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label2" type="Label" parent="Page3/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=1873040562]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.627451, 0, 1)
+text = "The AIs still seem to have a certain weakness:
+They are unable to get hands right.
+A new module has been added to check the hands
+of individuals you are screening."
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page3/VBoxContainer2" unique_id=1881001414]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CenterContainer" parent="Page3/VBoxContainer2/VBoxContainer2" unique_id=2095696635 node_paths=PackedStringArray("control") instance=ExtResource("3_u74ha")]
+layout_mode = 2
+control = NodePath("../../../..")
+button_text = "Next"
+additional_functions = Array[String](["to_next_scene"])
+
+[node name="Marker2D" type="Marker2D" parent="Page3" unique_id=1453992818]
 position = Vector2(576, 325)
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=664292137]
