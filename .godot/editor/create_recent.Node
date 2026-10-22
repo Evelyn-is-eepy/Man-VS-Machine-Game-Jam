@@ -1,3 +1,5 @@
+ColorRect
+CanvasLayer
 Button
 TextureRect
 Label
@@ -6,9 +8,7 @@ HBoxContainer
 Camera2D
 RichTextLabel
 CenterContainer
-CanvasLayer
 ProgressBar
 AnimatedSprite2D
-ColorRect
 VSeparator
 Sprite2D

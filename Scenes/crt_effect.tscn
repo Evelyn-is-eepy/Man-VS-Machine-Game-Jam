@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ghojx5dhbsfo"]
+
+[ext_resource type="Shader" uid="uid://bnmqhg147bphp" path="res://Assets/Shaders/crt_shader copy.gdshader" id="1_fw52h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ghio"]
+shader = ExtResource("1_fw52h")
+shader_parameter/warp_amount = 0.250000011875
+shader_parameter/scanline_darkness = 0.25
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1716290176]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=662007167]
+material = SubResource("ShaderMaterial_4ghio")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

@@ -8,3 +8,5 @@ res://Scripts/menu.gd
 res://Scenes/main_menu.tscn
 res://Scenes/Intermission1.tscn
 res://Scenes/Level1.tscn
+res://Scenes/crt_effect.tscn
+res://Assets/Shaders/crt_shader copy.gdshader
