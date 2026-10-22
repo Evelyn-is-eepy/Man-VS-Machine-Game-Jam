@@ -49,6 +49,7 @@ var score: int = 0
 var subjects_processed: int = 0
 var time_remaining: float
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if not is_intermission:
@@ -148,6 +149,7 @@ func process_subject(chose_ai: bool):
 	generate_subject()
 	move_camera(portrait_screen, 0.0)
 
+
 # Move to the next day/intermission
 func to_next_scene():
 	if (not is_intermission):
@@ -157,7 +159,10 @@ func to_next_scene():
 			get_tree().change_scene_to_file(FAIL_SCENE)
 	get_tree().change_scene_to_file(next_scene)
 
+
 func update_timer(remaining_time: float):
 	var mins = int(floor(remaining_time / 60.0))
 	var seconds = int(floor(remaining_time - mins * 60.0))
+	if seconds < 10:
+		seconds = "0" + str(seconds)
 	timer.text = str(mins) + ":" + str(seconds)

@@ -5,7 +5,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4ghio"]
 shader = ExtResource("1_fw52h")
 shader_parameter/warp_amount = 0.250000011875
-shader_parameter/scanline_darkness = 0.25
+shader_parameter/scanline_darkness = 0.5
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1716290176]
 layer = 2

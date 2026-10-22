@@ -23,6 +23,7 @@ hand_passing_chance = 0.1
 quota = 10
 quota_tracker = NodePath("UILayer/Label")
 is_intermission = true
+next_scene = "res://Scenes/main_menu.tscn"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1977575525]
 position = Vector2(-1, 0)
@@ -106,7 +107,12 @@ alignment = 1
 [node name="Label2" type="Label" parent="Page2/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=461663239]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.627451, 0, 1)
-text = "fuck you.........."
+text = "There have been sightings of AIs within
+the walls of Zone 7.  
+You are undoubtably responisble for this
+failure to protect our interests.
+The Project's fate was in your hands,
+and you failed."
 horizontal_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Page2/VBoxContainer2" unique_id=1420096578]
