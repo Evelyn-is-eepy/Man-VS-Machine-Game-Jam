@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Man VS Machine Game Jam"
-run/main_scene="uid://bdihjua88vqfs"
+run/main_scene="uid://c3klvib4k2b5e"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

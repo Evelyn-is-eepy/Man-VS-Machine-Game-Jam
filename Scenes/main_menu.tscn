@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://c3klvib4k2b5e"]
+
+[ext_resource type="FontFile" uid="uid://bm72eatk5ovw1" path="res://Assets/Fonts/Web437_IBM_BIOS-2y.woff" id="1_ce3w2"]
+[ext_resource type="Script" uid="uid://d4jsfvnm0ti8u" path="res://Scripts/menu.gd" id="2_n45e2"]
+[ext_resource type="StyleBox" uid="uid://cthjhajrb37wm" path="res://Assets/Themes/button_theme.tres" id="3_opfnp"]
+[ext_resource type="Texture2D" uid="uid://dum031ltau4i8" path="res://Assets/Sprites/menu background.png" id="4_cp0ys"]
+
+[sub_resource type="Theme" id="Theme_bg5pe"]
+default_font = ExtResource("1_ce3w2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxvf6"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+expand_margin_left = 4.0
+expand_margin_top = 2.0
+expand_margin_right = 4.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mduwj"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.627451, 0, 1)
+expand_margin_left = 4.0
+expand_margin_top = 2.0
+expand_margin_right = 4.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[node name="Control" type="Control" unique_id=2005020672]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_bg5pe")
+script = ExtResource("2_n45e2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1123620052]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 54.0
+offset_right = 539.0
+offset_bottom = 571.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1469079854]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Are You Human?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=704730855]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2" unique_id=414196093]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1442840055]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72156864, 0.14901961, 0.003921569, 1)
+theme_override_colors/font_hover_color = Color(1, 0.627451, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("3_opfnp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vxvf6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mduwj")
+text = "New Run"
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=463395134]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72156864, 0.14901961, 0.003921569, 1)
+theme_override_colors/font_hover_color = Color(1, 0.627451, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("3_opfnp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vxvf6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mduwj")
+text = "Close"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2097971149]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_cp0ys")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/VBoxContainer/Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/VBoxContainer/Button2" to="." method="_on_close_button_pressed"]

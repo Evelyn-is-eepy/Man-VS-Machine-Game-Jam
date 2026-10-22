@@ -15,11 +15,15 @@ func _ready() -> void:
 
 
 func _on_button_pressed() -> void:
-	# Move the camera to the specified location
-	control.move_camera(destination, load_time)
+	if destination:
+		# Move the camera to the specified location
+		control.move_camera(destination, load_time)
 	# Execute additional functions, if any
 	if additional_functions:
 		var function_index = 0
 		for function in additional_functions:
-			control.call(function, additional_arguments[function_index])
+			if additional_arguments:
+				control.call(function, additional_arguments[function_index])
+			else:
+				control.call(function)
 			function_index += 1

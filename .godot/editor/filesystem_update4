@@ -3,3 +3,8 @@ res://Scenes/nav_button.tscn
 res://Scripts/main.gd
 res://Scenes/Main.tscn
 res://Scenes/Intermission.tscn
+res://Scenes/game_over.tscn
+res://Scripts/menu.gd
+res://Scenes/main_menu.tscn
+res://Scenes/Intermission1.tscn
+res://Scenes/Level1.tscn

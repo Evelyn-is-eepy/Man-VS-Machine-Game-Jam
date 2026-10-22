@@ -1,10 +1,11 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1792457991
+::res://::1792624896
 icon.svg::CompressedTexture2D::8798084810440695112::1792366567::1792366572::1::::<><><>0<>0<>4defa5004d339408328d72198b231dfd<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://Assets/::1792542015
-::res://Assets/Fonts/::1792542301
+::res://Assets/::1792545101
+::res://Assets/Fonts/::1792542345
 Web437_IBM_BIOS-2y.woff::FontFile::3296393427306020138::1792542301::1792542345::1::::<><><>0<>0<>afa1279bc3824ab5c13b71abf277d0ca<>res://.godot/imported/Web437_IBM_BIOS-2y.woff-fba292714617e6f9c258a3bbc6ebc3ec.fontdata::
-::res://Assets/Sprites/::1792462122
+::res://Assets/Sprites/::1792627771
+menu background.png::CompressedTexture2D::8589380767401212133::1792627771::1792627774::1::::<><><>0<>0<>39e509d021c973b7158de7144032881b<>res://.godot/imported/menu background.png-a0daf6f075f1023df6c11a552af09583.ctex::
 New Piskel (1).png::CompressedTexture2D::3995150644680856661::1792452466::1792452507::1::::<><><>0<>0<>e4a9c7bd00c90560e7c048e4d3c372ca<>res://.godot/imported/New Piskel (1).png-d284e9ed0a56ad6adad1db8ad815b773.ctex::
 ::res://Assets/Sprites/Hands/::1792457945
 ::res://Assets/Sprites/Hands/AI/::1792458120
@@ -30,9 +31,23 @@ human_2.png::CompressedTexture2D::1603470665084473356::1792459666::1792459753::1
 human_3.png::CompressedTexture2D::4383612491836339922::1792479638::1792481388::1::::<><><>0<>0<>91030f9a0bf698c10b8408067f4ef8e2<>res://.godot/imported/human_3.png-222383d4360fc657f6fd7d6b6c23edec.ctex::
 human_4.png::CompressedTexture2D::6237964647629878849::1792480490::1792481388::1::::<><><>0<>0<>7e146fdcf711b002ca8a1f4c6aa1a890<>res://.godot/imported/human_4.png-ed882c4640b4a511099d31230edff4aa.ctex::
 human_5.png::CompressedTexture2D::2744026632114212714::1792481251::1792481388::1::::<><><>0<>0<>06ff745dc77e60572af084d47abcb30a<>res://.godot/imported/human_5.png-ba3c9d94c2b1ed408027480c8984ed4d.ctex::
-::res://Scenes/::1792541932
-Main.tscn::PackedScene::2613944379745500756::1792541932::0::1::::<><><>0<>0<><>::uid://du8am0l3ja1of::::res://Scripts/main.gd<>uid://s17ujet3gkyr::::res://Scenes/nav_button.tscn<>uid://bwok3ucdm8nfo::::res://Assets/Sprites/Portraits/Human/human_1.png<>uid://ckib1w2jdyibk::::res://Assets/Sprites/Hands/Human/human_H_1.png<>uid://bw6jsu2028ps4::::res://Assets/Sprites/New Piskel (1).png
-nav_button.tscn::PackedScene::1319052146527069497::1792541031::0::1::::<><><>0<>0<><>::uid://do775sn8mkno4::::res://Scripts/nav_button.gd
-::res://Scripts/::1792540865
-main.gd::GDScript::8631186150611633817::1792532141::0::1::::<>Control<><>0<>0<><>::
-nav_button.gd::GDScript::8209963434745916701::1792540865::0::1::::<>Control<><>0<>0<><>::
+::res://Assets/Themes/::1792545121
+button_theme.tres::StyleBoxFlat::6121439008957584840::1792545121::0::1::::<><><>0<>0<><>::
+::res://Scenes/::1792624954
+game_over.tscn::PackedScene::7873451704915303393::1792624613::0::1::::<><><>0<>0<><>::uid://bm72eatk5ovw1::::res://Assets/Fonts/Web437_IBM_BIOS-2y.woff<>uid://du8am0l3ja1of::::res://Scripts/main.gd<>uid://s17ujet3gkyr::::res://Scenes/nav_button.tscn
+Intermission1.tscn::PackedScene::5332049060557245533::1792549467::0::1::::<><><>0<>0<><>::uid://bm72eatk5ovw1::::res://Assets/Fonts/Web437_IBM_BIOS-2y.woff<>uid://du8am0l3ja1of::::res://Scripts/main.gd<>uid://s17ujet3gkyr::::res://Scenes/nav_button.tscn
+Level1.tscn::PackedScene::2613944379745500756::1792624653::0::1::::<><><>0<>0<><>::uid://du8am0l3ja1of::::res://Scripts/main.gd<>uid://bm72eatk5ovw1::::res://Assets/Fonts/Web437_IBM_BIOS-2y.woff<>uid://s17ujet3gkyr::::res://Scenes/nav_button.tscn<>uid://bwok3ucdm8nfo::::res://Assets/Sprites/Portraits/Human/human_1.png<>uid://ckib1w2jdyibk::::res://Assets/Sprites/Hands/Human/human_H_1.png<>uid://bw6jsu2028ps4::::res://Assets/Sprites/New Piskel (1).png<>uid://cthjhajrb37wm::::res://Assets/Themes/button_theme.tres
+nav_button.tscn::PackedScene::1319052146527069497::1792545405::0::1::::<><><>0<>0<><>::uid://do775sn8mkno4::::res://Scripts/nav_button.gd<>uid://cthjhajrb37wm::::res://Assets/Themes/button_theme.tres
+Level2.tscn::PackedScene::8351082471395154199::1792624911::0::1::::<><><>0<>0<><>::uid://bm72eatk5ovw1::::res://Assets/Fonts/Web437_IBM_BIOS-2y.woff<>uid://du8am0l3ja1of::::res://Scripts/main.gd<>uid://bw6jsu2028ps4::::res://Assets/Sprites/New Piskel (1).png<>uid://s17ujet3gkyr::::res://Scenes/nav_button.tscn<>uid://bwok3ucdm8nfo::::res://Assets/Sprites/Portraits/Human/human_1.png<>uid://ckib1w2jdyibk::::res://Assets/Sprites/Hands/Human/human_H_1.png<>uid://cthjhajrb37wm::::res://Assets/Themes/button_theme.tres
+Level3.tscn::PackedScene::8766194188918207976::1792624917::0::1::::<><><>0<>0<><>::uid://bm72eatk5ovw1::::res://Assets/Fonts/Web437_IBM_BIOS-2y.woff<>uid://du8am0l3ja1of::::res://Scripts/main.gd<>uid://bw6jsu2028ps4::::res://Assets/Sprites/New Piskel (1).png<>uid://s17ujet3gkyr::::res://Scenes/nav_button.tscn<>uid://bwok3ucdm8nfo::::res://Assets/Sprites/Portraits/Human/human_1.png<>uid://ckib1w2jdyibk::::res://Assets/Sprites/Hands/Human/human_H_1.png<>uid://cthjhajrb37wm::::res://Assets/Themes/button_theme.tres
+Level4.tscn::PackedScene::6499819180086730227::1792624921::0::1::::<><><>0<>0<><>::uid://bm72eatk5ovw1::::res://Assets/Fonts/Web437_IBM_BIOS-2y.woff<>uid://du8am0l3ja1of::::res://Scripts/main.gd<>uid://bw6jsu2028ps4::::res://Assets/Sprites/New Piskel (1).png<>uid://s17ujet3gkyr::::res://Scenes/nav_button.tscn<>uid://bwok3ucdm8nfo::::res://Assets/Sprites/Portraits/Human/human_1.png<>uid://ckib1w2jdyibk::::res://Assets/Sprites/Hands/Human/human_H_1.png<>uid://cthjhajrb37wm::::res://Assets/Themes/button_theme.tres
+Level5.tscn::PackedScene::170678182497737967::1792624927::0::1::::<><><>0<>0<><>::uid://bm72eatk5ovw1::::res://Assets/Fonts/Web437_IBM_BIOS-2y.woff<>uid://du8am0l3ja1of::::res://Scripts/main.gd<>uid://bw6jsu2028ps4::::res://Assets/Sprites/New Piskel (1).png<>uid://s17ujet3gkyr::::res://Scenes/nav_button.tscn<>uid://bwok3ucdm8nfo::::res://Assets/Sprites/Portraits/Human/human_1.png<>uid://ckib1w2jdyibk::::res://Assets/Sprites/Hands/Human/human_H_1.png<>uid://cthjhajrb37wm::::res://Assets/Themes/button_theme.tres
+Intermission2.tscn::PackedScene::8835737546514366085::1792624940::0::1::::<><><>0<>0<><>::uid://bm72eatk5ovw1::::res://Assets/Fonts/Web437_IBM_BIOS-2y.woff<>uid://du8am0l3ja1of::::res://Scripts/main.gd<>uid://s17ujet3gkyr::::res://Scenes/nav_button.tscn
+Intermission3.tscn::PackedScene::1031401925571285931::1792624945::0::1::::<><><>0<>0<><>::uid://bm72eatk5ovw1::::res://Assets/Fonts/Web437_IBM_BIOS-2y.woff<>uid://du8am0l3ja1of::::res://Scripts/main.gd<>uid://s17ujet3gkyr::::res://Scenes/nav_button.tscn
+Intermission4.tscn::PackedScene::3006641627419432542::1792624949::0::1::::<><><>0<>0<><>::uid://bm72eatk5ovw1::::res://Assets/Fonts/Web437_IBM_BIOS-2y.woff<>uid://du8am0l3ja1of::::res://Scripts/main.gd<>uid://s17ujet3gkyr::::res://Scenes/nav_button.tscn
+Intermission5.tscn::PackedScene::8150794280188176473::1792624954::0::1::::<><><>0<>0<><>::uid://bm72eatk5ovw1::::res://Assets/Fonts/Web437_IBM_BIOS-2y.woff<>uid://du8am0l3ja1of::::res://Scripts/main.gd<>uid://s17ujet3gkyr::::res://Scenes/nav_button.tscn
+main_menu.tscn::PackedScene::6759478578447800156::1792628516::0::1::::<><><>0<>0<><>::uid://bm72eatk5ovw1::::res://Assets/Fonts/Web437_IBM_BIOS-2y.woff<>uid://d4jsfvnm0ti8u::::res://Scripts/menu.gd<>uid://cthjhajrb37wm::::res://Assets/Themes/button_theme.tres<>uid://dum031ltau4i8::::res://Assets/Sprites/menu background.png
+::res://Scripts/::1792624749
+main.gd::GDScript::8631186150611633817::1792628516::0::1::::<>Control<><>0<>0<><>::
+nav_button.gd::GDScript::8209963434745916701::1792628516::0::1::::<>Control<><>0<>0<><>::
+menu.gd::GDScript::9214420874860302206::1792628516::0::1::::<>Control<><>0<>0<><>::

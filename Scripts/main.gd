@@ -8,8 +8,12 @@ const HUMAN_BONUS = 10
 const AI_BONUS = 10
 const HUMAN_PUNISHMENT = 40
 const AI_PUNISHMENT = 30
-const NEW_SUBJECT_WAIT = 6.0
+const QUOTA_PUNISHMENT = 60
+const NEW_SUBJECT_WAIT = 4.0
 const TRACKER_TEXT = "Processed: "
+const AI_CHOICE_LINE = "Terminating suspected AI..."
+const HUMAN_CHOICE_LINE = "Processing subject..."
+const FAIL_SCENE = ""
 
 @export var camera: Camera2D
 @export var loading_screen: CanvasLayer
@@ -20,8 +24,11 @@ const TRACKER_TEXT = "Processed: "
 @export var hand_passing_chance: float
 @export var portrait_screen: Marker2D
 @export var processing_bar: ProgressBar
+@export var processing_label: Label
 @export var quota: int
+@export var level_time: int
 @export var quota_tracker: Label
+@export var timer: Label
 @export var response_box: RichTextLabel
 @export var can_pass_both: bool
 @export var is_intermission: bool
@@ -40,6 +47,7 @@ var human_responses: Array = [
 var is_subject_ai: bool
 var score: int = 0
 var subjects_processed: int = 0
+var time_remaining: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -51,13 +59,19 @@ func _ready() -> void:
 		human_portraits = Array(ResourceLoader.list_directory(HUMAN_PORTRAITS_FOLDER))
 		# Updates UI:
 		quota_tracker.text = TRACKER_TEXT + str(subjects_processed) + "/" + str(quota)
+		time_remaining = level_time
+		update_timer(time_remaining)
 		# Generates a subject
 		generate_subject()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if not is_intermission:
+		time_remaining = move_toward(time_remaining, 0.0, delta)
+		update_timer(time_remaining)
+		if time_remaining <= 0.0:
+			to_next_scene()
 
 
 # Move the camera to a new screen
@@ -105,8 +119,10 @@ func generate_subject():
 # Acts on the player's decision (AI or human) and awards/takes away score
 func process_subject(chose_ai: bool):
 	processing_bar.value = 0
+	processing_label.text = HUMAN_CHOICE_LINE
 	# If they decided AI:
 	if chose_ai:
+		processing_label.text = AI_CHOICE_LINE
 		# There will be effects for this eventually
 		if is_subject_ai:
 			score += AI_BONUS
@@ -134,4 +150,14 @@ func process_subject(chose_ai: bool):
 
 # Move to the next day/intermission
 func to_next_scene():
+	if (not is_intermission):
+		if subjects_processed < quota:
+			score -= QUOTA_PUNISHMENT
+		if score <= 0:
+			get_tree().change_scene_to_file(FAIL_SCENE)
 	get_tree().change_scene_to_file(next_scene)
+
+func update_timer(remaining_time: float):
+	var mins = int(floor(remaining_time / 60.0))
+	var seconds = int(floor(remaining_time - mins * 60.0))
+	timer.text = str(mins) + ":" + str(seconds)

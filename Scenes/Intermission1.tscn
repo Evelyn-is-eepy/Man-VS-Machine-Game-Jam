@@ -1,0 +1,277 @@
+[gd_scene format=3 uid="uid://ch75cl1ghjlm8"]
+
+[ext_resource type="FontFile" uid="uid://bm72eatk5ovw1" path="res://Assets/Fonts/Web437_IBM_BIOS-2y.woff" id="1_47dhd"]
+[ext_resource type="Script" uid="uid://du8am0l3ja1of" path="res://Scripts/main.gd" id="2_f3y7e"]
+[ext_resource type="PackedScene" uid="uid://s17ujet3gkyr" path="res://Scenes/nav_button.tscn" id="4_pc7h3"]
+
+[sub_resource type="Theme" id="Theme_jw32o"]
+default_font = ExtResource("1_47dhd")
+
+[node name="Control" type="Control" unique_id=321524383 node_paths=PackedStringArray("camera", "loading_screen", "portrait_rect", "hand_rect", "portrait_screen", "processing_bar", "quota_tracker", "response_box")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_jw32o")
+script = ExtResource("2_f3y7e")
+camera = NodePath("Camera2D")
+loading_screen = NodePath("")
+portrait_rect = NodePath("")
+hand_rect = NodePath("")
+ai_chance = 0.2
+face_passing_chance = 0.2
+hand_passing_chance = 0.1
+portrait_screen = NodePath("")
+processing_bar = NodePath("")
+quota = 10
+quota_tracker = NodePath("UILayer/Label")
+response_box = NodePath("")
+is_intermission = true
+next_scene = "res://Scenes/Level1.tscn"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1977575525]
+position = Vector2(-1, 0)
+zoom = Vector2(2, 2)
+
+[node name="Page1" type="HBoxContainer" parent="." unique_id=323761919]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 0.2960205
+offset_bottom = 0.29599
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page1" unique_id=949370315]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page1/VBoxContainer2" unique_id=2108608652]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="Page1/VBoxContainer2/VBoxContainer" unique_id=276583814]
+layout_mode = 2
+text = "1 DAY SINCE DISASTER"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page1/VBoxContainer2" unique_id=901309587]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CenterContainer" parent="Page1/VBoxContainer2/VBoxContainer2" unique_id=148418125 node_paths=PackedStringArray("destination", "control") instance=ExtResource("4_pc7h3")]
+layout_mode = 2
+destination = NodePath("../../../../Page2/Marker2D")
+control = NodePath("../../../..")
+button_text = "Next"
+
+[node name="Marker2D" type="Marker2D" parent="Page1" unique_id=849652550]
+position = Vector2(576, 325)
+
+[node name="Page2" type="HBoxContainer" parent="." unique_id=716349874]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 1024.296
+offset_bottom = 1024.296
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page2" unique_id=283980771]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page2/VBoxContainer2" unique_id=1617185012]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Page2/VBoxContainer2/VBoxContainer" unique_id=1438079037]
+layout_mode = 2
+text = "MESSAGE FROM COMMANDER:"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page2/VBoxContainer2/VBoxContainer" unique_id=963080299]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label2" type="Label" parent="Page2/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=461663239]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.627451, 0, 1)
+text = "We have recieved tragic news.
+Quarantine zone 9 has broken, and been
+overrun by our mechanical enemy.
+Advance reports suggest a new kind
+of AI soldier, disguised as human
+and mimicking our behaviour.
+"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page2/VBoxContainer2" unique_id=1420096578]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CenterContainer" parent="Page2/VBoxContainer2/VBoxContainer2" unique_id=1493389069 node_paths=PackedStringArray("destination", "control") instance=ExtResource("4_pc7h3")]
+layout_mode = 2
+destination = NodePath("../../../../Page3/Marker2D")
+control = NodePath("../../../..")
+button_text = "Next"
+
+[node name="Marker2D" type="Marker2D" parent="Page2" unique_id=114006086]
+position = Vector2(576, 325)
+
+[node name="Page3" type="HBoxContainer" parent="." unique_id=1485101735]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 2263.296
+offset_bottom = 2263.296
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page3" unique_id=1073806561]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page3/VBoxContainer2" unique_id=652093976]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Page3/VBoxContainer2/VBoxContainer" unique_id=1634088008]
+layout_mode = 2
+text = "MESSAGE FROM COMMANDER:"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page3/VBoxContainer2/VBoxContainer" unique_id=657035676]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label2" type="Label" parent="Page3/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=1095667872]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.627451, 0, 1)
+text = "You have been chosen to monitor
+individuals entering Zone 7.
+If our reports are to be believed,
+anyone attempting to enter could
+be an AI in disguise."
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page3/VBoxContainer2" unique_id=705740504]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CenterContainer" parent="Page3/VBoxContainer2/VBoxContainer2" unique_id=570396720 node_paths=PackedStringArray("destination", "control") instance=ExtResource("4_pc7h3")]
+layout_mode = 2
+destination = NodePath("../../../../Page4/Marker2D")
+control = NodePath("../../../..")
+button_text = "Next"
+
+[node name="Marker2D" type="Marker2D" parent="Page3" unique_id=18836488]
+position = Vector2(576, 325)
+
+[node name="Page4" type="HBoxContainer" parent="." unique_id=1686101406]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.50200003
+anchor_right = 0.5
+anchor_bottom = 0.49800003
+offset_top = 3551.296
+offset_bottom = 3551.296
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page4" unique_id=860936439]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page4/VBoxContainer2" unique_id=1763866548]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Page4/VBoxContainer2/VBoxContainer" unique_id=2007438478]
+layout_mode = 2
+text = "MESSAGE FROM COMMANDER:"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page4/VBoxContainer2/VBoxContainer" unique_id=1764275437]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label2" type="Label" parent="Page4/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=328058654]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.627451, 0, 1)
+text = "Check everyone for deformed or 
+uncanny features or visible machinery.
+We cannot allow any agents of
+the enemy to interrupt the Project."
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page4/VBoxContainer2" unique_id=2104157379]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CenterContainer" parent="Page4/VBoxContainer2/VBoxContainer2" unique_id=1044117507 node_paths=PackedStringArray("control") instance=ExtResource("4_pc7h3")]
+layout_mode = 2
+control = NodePath("../../../..")
+button_text = "Begin"
+additional_functions = Array[String](["to_next_scene"])
+
+[node name="Marker2D" type="Marker2D" parent="Page4" unique_id=660568970]
+position = Vector2(576, 325)
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=664292137]
+visible = false
+
+[node name="Label" type="Label" parent="UILayer" unique_id=915795369]
+offset_left = 19.0
+offset_top = -271.0
+offset_right = 243.0
+offset_bottom = -239.0
+theme_override_colors/font_color = Color(0.72156864, 0.14901961, 0.003921569, 1)
+theme_override_fonts/font = ExtResource("1_47dhd")
+theme_override_font_sizes/font_size = 32
+text = "Processed: x/x"
+
+[node name="Label" type="Label" parent="UILayer/Label" unique_id=1837879972]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 4.0
+offset_right = 1108.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.72156864, 0.14901961, 0.003921569, 1)
+theme_override_fonts/font = ExtResource("1_47dhd")
+theme_override_font_sizes/font_size = 32
+text = "xx:xx"
+horizontal_alignment = 2
