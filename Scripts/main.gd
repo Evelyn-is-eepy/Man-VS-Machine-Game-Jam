@@ -114,12 +114,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_right"):
-		subjects_processed = 100
-		score = 100
-		to_next_scene()
-	if Input.is_action_just_pressed("ui_left"):
-		time_remaining = 1.0
+	#if Input.is_action_just_pressed("ui_right"):
+		#subjects_processed = 100
+		#score = 100
+		#to_next_scene()
+	#if Input.is_action_just_pressed("ui_left"):
+		#time_remaining = 1.0
 	if not is_intermission:
 		time_remaining = move_toward(time_remaining, 0.0, delta)
 		update_timer(time_remaining)
