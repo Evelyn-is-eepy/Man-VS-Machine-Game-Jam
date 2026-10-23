@@ -117,6 +117,8 @@ func _process(delta: float) -> void:
 		subjects_processed = 100
 		score = 100
 		to_next_scene()
+	if Input.is_action_just_pressed("ui_left"):
+		time_remaining = 1.0
 	if not is_intermission:
 		time_remaining = move_toward(time_remaining, 0.0, delta)
 		update_timer(time_remaining)
@@ -207,13 +209,17 @@ func process_subject(chose_ai: bool):
 
 # Move to the next day/intermission
 func to_next_scene():
+	var you_lost = false
 	if (not is_intermission):
 		if subjects_processed < quota:
 			score -= QUOTA_PUNISHMENT
 		if score <= 0 and not ignore_loss:
-			get_tree().change_scene_to_file(FAIL_SCENE)
-			pass
-	get_tree().change_scene_to_file(next_scene)
+			print("you lost! idiot")
+			you_lost = true
+	if you_lost:
+		get_tree().change_scene_to_file(FAIL_SCENE)
+	else:
+		get_tree().change_scene_to_file(next_scene)
 
 
 func update_timer(remaining_time: float):

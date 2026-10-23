@@ -7,7 +7,7 @@
 [sub_resource type="Theme" id="Theme_jw32o"]
 default_font = ExtResource("1_ek8ke")
 
-[node name="Control" type="Control" unique_id=321524383 node_paths=PackedStringArray("quota_tracker")]
+[node name="Control" type="Control" unique_id=321524383 node_paths=PackedStringArray("camera", "quota_tracker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +17,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme = SubResource("Theme_jw32o")
 script = ExtResource("2_eoghk")
+camera = NodePath("Camera2D")
 ai_chance = 0.2
 face_passing_chance = 0.2
 hand_passing_chance = 0.1
@@ -126,7 +127,7 @@ layout_mode = 2
 destination = NodePath("../../../Marker2D/Marker2D")
 control = NodePath("../../../..")
 button_text = "Return to menu"
-additional_functions = Array[String](["to_next_scene()"])
+additional_functions = Array[String](["to_next_scene"])
 
 [node name="Marker2D" type="Marker2D" parent="Page2" unique_id=114006086]
 position = Vector2(576, 325)
