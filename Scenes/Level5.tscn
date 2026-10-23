@@ -106,6 +106,7 @@ quota_tracker = NodePath("UILayer/Label")
 timer = NodePath("UILayer/Label2")
 response_box = NodePath("Page6/VBoxContainer/RichTextLabel")
 can_pass_both = true
+next_scene = "res://Scenes/Intermission6.tscn"
 ignore_loss = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=163684619]

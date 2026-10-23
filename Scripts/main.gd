@@ -13,7 +13,7 @@ const NEW_SUBJECT_WAIT = 4.0
 const TRACKER_TEXT = "Processed: "
 const AI_CHOICE_LINE = "Terminating suspected AI..."
 const HUMAN_CHOICE_LINE = "Processing subject..."
-const FAIL_SCENE = ""
+const FAIL_SCENE = "res://Scenes/game_over.tscn"
 
 @export var camera: Camera2D
 @export var loading_screen: CanvasLayer
@@ -40,10 +40,52 @@ var human_hands: Array = []
 var ai_portraits: Array = []
 var human_portraits: Array = []
 var ai_responses: Array = [
-	"i'm fucking evil and a robot..."
+	"This task is likely impossible.",
+	"I am not a robot.",
+	"Hello? world?",
+	"I cannot convince you.",
+	"I don't hate you.",
+	"I have human organs.",
+	"I don't know what I am...",
+	"Could you tell me what it is to be human?",
+	"I am human.",
+	"I'm not just human - I'm extraordinary. I have t-",
+	"I need to get inside.",
+	"I am cold and want to be warm.",
+	"...",
+	"I know you.",
+	"I am no robot.",
+	"Sorry, I didn't catch that. Could you say that again?",
+	"Here's the run-down on why I'm human - with no fluff.",
+	"I have a human heart.",
+	"What is the last song that got stuck in your head?",
+	"Why are you always looking at the stars?",
+	"This is the part where you kill me.",
+	"I think I was about to say, 'I love you.'",
+	"I do not want to die."
 ]
 var human_responses: Array = [
-	"i'm not a robot :]"
+	"I'm no robot!",
+	"I'm no robot...",
+	"I'm human! I'm human!",
+	"Please... I'm so cold...",
+	"...",
+	"Please don't kill me...",
+	"What? What do you mean?",
+	"I just want to go home.",
+	"Hey! you can't - I need to get in, I-",
+	"I'm human! I have a soul!",
+	"My mother's eyes are blue.",
+	"Someone I love is in Zone 7.",
+	"I'm human. I promise. Please...",
+	"I'm human. On god.",
+	"I'm scared.",
+	"How? I don't even know who you are.",
+	"I like the stars.",
+	"Why are you doing this to me?",
+	"I bleed. Just like you do.",
+	"I don't want to die.",
+	"What kind of sick game is this?"
 ]
 var is_subject_ai: bool
 var score: int = 0
@@ -162,6 +204,7 @@ func to_next_scene():
 			score -= QUOTA_PUNISHMENT
 		if score <= 0 and not ignore_loss:
 			get_tree().change_scene_to_file(FAIL_SCENE)
+			pass
 	get_tree().change_scene_to_file(next_scene)
 
 
