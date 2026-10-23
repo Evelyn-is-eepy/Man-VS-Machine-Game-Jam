@@ -93,6 +93,7 @@ var subjects_processed: int = 0
 var time_remaining: float
 var processing_sound = "res://Assets/Audio/processing.wav"
 var loading_sound = "res://Assets/Audio/loading.wav"
+var scene_change_sound = "res://Assets/Audio/SceneChange.wav"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -216,6 +217,8 @@ func to_next_scene():
 		if score <= 0 and not ignore_loss:
 			print("you lost! idiot")
 			you_lost = true
+	# Play sound
+	SoundSystem.play_sound_effect(scene_change_sound)
 	if you_lost:
 		get_tree().change_scene_to_file(FAIL_SCENE)
 	else:
