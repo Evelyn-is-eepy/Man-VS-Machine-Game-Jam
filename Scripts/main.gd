@@ -91,6 +91,8 @@ var is_subject_ai: bool
 var score: int = 0
 var subjects_processed: int = 0
 var time_remaining: float
+var processing_sound = "res://Assets/Audio/processing.wav"
+var loading_sound = "res://Assets/Audio/loading.wav"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -126,6 +128,7 @@ func _process(delta: float) -> void:
 func move_camera(destination: Marker2D, wait_time: float):
 	camera.position = destination.global_position
 	if wait_time:
+		SoundSystem.play_sound_effect(loading_sound, wait_time)
 		loading_screen.visible = true
 		await get_tree().create_timer(wait_time).timeout
 		loading_screen.visible = false
@@ -166,6 +169,9 @@ func generate_subject():
 	
 # Acts on the player's decision (AI or human) and awards/takes away score
 func process_subject(chose_ai: bool):
+	# Play sound
+	SoundSystem.play_sound_effect(processing_sound)
+	# Update the processing screen
 	processing_bar.value = 0
 	processing_label.text = HUMAN_CHOICE_LINE
 	# If they decided AI:
@@ -193,6 +199,8 @@ func process_subject(chose_ai: bool):
 	subjects_processed += 1
 	# Update UI
 	quota_tracker.text = TRACKER_TEXT + str(subjects_processed) + "/" + str(quota)
+	if subjects_processed >= quota:
+		to_next_scene()
 	generate_subject()
 	move_camera(portrait_screen, 0.0)
 

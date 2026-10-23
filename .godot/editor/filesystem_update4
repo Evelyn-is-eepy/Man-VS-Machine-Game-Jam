@@ -19,3 +19,5 @@ res://Scenes/Intermission4.tscn
 res://Scenes/Level4.tscn
 res://Scenes/Intermission5.tscn
 res://Scenes/Level5.tscn
+res://Scenes/sound_system.tscn
+res://Scripts/sound_system.gd

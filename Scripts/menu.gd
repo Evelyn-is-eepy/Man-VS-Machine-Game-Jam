@@ -1,8 +1,10 @@
 extends Control
 
+var startup_sound = "res://Assets/Audio/startup.wav"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SoundSystem.play_sound_effect(startup_sound)
 	pass # Replace with function body.
 
 

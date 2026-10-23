@@ -4,9 +4,11 @@
 [ext_resource type="Script" uid="uid://d4jsfvnm0ti8u" path="res://Scripts/menu.gd" id="2_n45e2"]
 [ext_resource type="StyleBox" uid="uid://cthjhajrb37wm" path="res://Assets/Themes/button_theme.tres" id="3_opfnp"]
 [ext_resource type="Texture2D" uid="uid://dum031ltau4i8" path="res://Assets/Sprites/menu background.png" id="4_cp0ys"]
+[ext_resource type="PackedScene" uid="uid://s17ujet3gkyr" path="res://Scenes/nav_button.tscn" id="4_n45e2"]
 
 [sub_resource type="Theme" id="Theme_bg5pe"]
 default_font = ExtResource("1_ce3w2")
+default_font_size = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxvf6"]
 bg_color = Color(0, 0, 0, 1)
@@ -69,6 +71,7 @@ layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1442840055]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.72156864, 0.14901961, 0.003921569, 1)
 theme_override_colors/font_hover_color = Color(1, 0.627451, 0, 1)
@@ -79,6 +82,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_mduwj")
 text = "New Run"
 
 [node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=463395134]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.72156864, 0.14901961, 0.003921569, 1)
 theme_override_colors/font_hover_color = Color(1, 0.627451, 0, 1)
@@ -87,6 +91,18 @@ theme_override_styles/normal = ExtResource("3_opfnp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vxvf6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mduwj")
 text = "Close"
+
+[node name="CenterContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=148418125 node_paths=PackedStringArray("control") instance=ExtResource("4_n45e2")]
+layout_mode = 2
+control = NodePath("../../../..")
+button_text = "New Run"
+additional_functions = Array[String](["_on_play_button_pressed"])
+
+[node name="CenterContainer2" parent="VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1389503968 node_paths=PackedStringArray("control") instance=ExtResource("4_n45e2")]
+layout_mode = 2
+control = NodePath("../../../..")
+button_text = "Exit"
+additional_functions = Array[String](["_on_close_button_pressed"])
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2097971149]
 z_index = -1

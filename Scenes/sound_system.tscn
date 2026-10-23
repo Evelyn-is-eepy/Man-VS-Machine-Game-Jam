@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bytsirxb3nobe"]
+
+[ext_resource type="Script" uid="uid://bvhcgy1sc7vob" path="res://Scripts/sound_system.gd" id="1_fapos"]
+[ext_resource type="AudioStream" uid="uid://bq6akdw773pds" path="res://Assets/Audio/256961__miguetelo__sinister_atmosphere_miguetelo.wav" id="2_pph1t"]
+
+[node name="Node" type="Node" unique_id=1174770580]
+script = ExtResource("1_fapos")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2066624012]
+stream = ExtResource("2_pph1t")
+volume_db = -12.386
+autoplay = true

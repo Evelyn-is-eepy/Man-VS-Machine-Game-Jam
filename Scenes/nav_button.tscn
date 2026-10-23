@@ -45,4 +45,5 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0tr2p")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6qojn")
 text = "sample text"
 
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
