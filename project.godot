@@ -13,7 +13,7 @@ config_version=5
 config/name="Man VS Machine Game Jam"
 run/main_scene="uid://c3klvib4k2b5e"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://crwdhokhsw3j6"
 
 [autoload]
 
@@ -33,4 +33,5 @@ window/stretch/mode="canvas_items"
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
